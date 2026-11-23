@@ -1,9 +1,4 @@
-<p align="center">
-  <img src="images/image .png"
-       alt="AeroTopo"
-       width="100%">
-</p>
-# AutoContour
+
 Draw an area on the map, choose a DEM (or use your own), click **Create contours**.
 
 - DEM sources: Copernicus GLO-30 / GLO-90, SRTM, USGS 3DEP 10 m (USA), EMODnet and ETOPO1 (sea depths), your own files, a project raster layer, or an online GeoTIFF link.
