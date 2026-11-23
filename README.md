@@ -1,6 +1,6 @@
 <p align="center">
   <img src="images/image.png"
-       alt="AeroTopo Banner"
+       alt="AeroTopo"
        width="100%">
 </p>
 # AutoContour
