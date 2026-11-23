@@ -32,7 +32,7 @@ def process(d, p, is_canceled=None, progress=None):
         z = contour.smooth_grid(z_land, p["smooth"]) if p["smooth"] > 0 else z_land
         levels = dem.contour_levels(float(np.nanmin(z)), float(np.nanmax(z)),
                                     p["interval"], p["base"])
-        if len(levels) > 2000:
+        if len(levels) > 5000:
             raise ValueError("%d contour levels: the interval is too small for this "
                              "elevation range." % len(levels))
         for k, lv in enumerate(levels):
@@ -131,7 +131,7 @@ def elevation_bands(z, d, p, is_canceled=None):
     first = np.floor((zmin - base) / itv) * itv + base
     last = np.ceil((zmax - base) / itv) * itv + base
     levels = [float(first + k * itv) for k in range(int(round((last - first) / itv)) + 1)]
-    if len(levels) > 400:
+    if len(levels) > 1500:
         raise ValueError("%d bands: the interval is too small for this elevation range." % len(levels))
     nr, nc = z.shape
     dx, dy = d["dx"], d["dy"]

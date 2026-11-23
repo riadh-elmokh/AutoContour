@@ -47,7 +47,7 @@ SOURCE_CHOICES = [
     ("url", "An online GeoTIFF / COG link (any open data)"),
 ]
 DOWNLOADS = ("auto", "cop30", "cop90", "usgs10", "srtm30", "emodnet", "etopo")
-INTERVALS = ["Automatic", "5", "10", "20", "25", "50", "100", "200", "250", "500", "1000"]
+INTERVALS = ["Automatic", "0.25", "0.5", "1", "2", "5", "10", "20", "25", "50", "100", "200", "250", "500", "1000"]
 
 
 class AutoContourDialog(QDialog):
@@ -597,7 +597,7 @@ class AutoContourDialog(QDialog):
         try:
             user_interval = None if chosen.lower() in ("automatic", "") else float(chosen)
         except ValueError:
-            QMessageBox.warning(self, "AutoContour", "The interval must be a number, for example 100.")
+            QMessageBox.warning(self, "AutoContour", "The interval must be a number, for example 100 or 0.5.")
             return
         if user_interval is not None and user_interval <= 0:
             QMessageBox.warning(self, "AutoContour", "The interval must be larger than 0.")
@@ -656,6 +656,9 @@ class AutoContourDialog(QDialog):
                 "radius": radius, "relief": relief, "round": True,
                 "hillshade_path": hill_path, "slope_path": slope_path, "aspect_path": aspect_path, "geographic": bool(d.get("geographic")),
             }
+            if interval < 1.0 and out_unit == "m":
+                task.message.emit("Note: below 1 m the lines follow the noise of the DEM unless it is very "
+                                  "precise (drone, LiDAR or survey). Public DEMs are good to about 1 m at best.")
             task.message.emit("DEM ready (%s). Interval: %g %s. Computing..." % (
                 os.path.basename(dem_path), interval, out_unit))
             res = pipeline.process(d, params, is_canceled=task.isCanceled, progress=task.setProgress)

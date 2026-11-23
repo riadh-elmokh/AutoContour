@@ -3,8 +3,8 @@ import math
 
 from . import demio
 
-NICE_M = (5, 10, 20, 25, 50, 100, 200, 250, 500, 1000)
-NICE_FT = (20, 50, 100, 200, 500, 1000, 2000, 5000)
+NICE_M = (0.5, 1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000)
+NICE_FT = (1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000)
 TARGET_LEVELS = 30           # aim for at most about this many contour levels
 M_PER_DEG = 111320.0
 ARC_SECOND_M = 30.87
