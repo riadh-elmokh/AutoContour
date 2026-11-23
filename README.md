@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="image.png"
+  <img src="images/image.png"
        alt="AeroTopo Banner"
        width="100%">
 </p>
