@@ -1,0 +1,18 @@
+[general]
+name=AutoContour
+qgisMinimumVersion=3.22
+supportsQt6=True
+description=Draw an area, pick a DEM or use your own, and get contours, elevation polygons, spot elevations, slope and aspect automatically
+about=AutoContour does the whole job from a drawn rectangle. It gets the DEM for you (Copernicus GLO-30 and GLO-90, SRTM, USGS 3DEP 10 m for the USA, EMODnet and ETOPO1 for sea depths) or uses your own DEM files, project raster layers or online GeoTIFF links. It picks a sensible interval and builds contour lines with index contours and labels, elevation polygons (0-100, 100-200, ...), spot elevations (peaks, low points and the highest point), slope and aspect maps and an optional hillshade. Results are saved to GeoPackage or Shapefile with Z values (Point Z, LineString Z, Polygon Z), a 3D .kmz for Google Earth and a short quality report. A click tool reads the elevation anywhere on the map, and a 3D view turns the result (surface, contours, peaks and lows) around with the mouse. Works in metres or feet, for topographic maps, aeronautical charts, hiking, engineering and GIS projects. Large areas are read at a reduced resolution automatically. Downloads need an internet connection. Results come from a DEM and are not survey data: for official charts use the authority's data. Not affiliated with any aviation authority.
+version=1.0.0
+author=Riadh Elmokh
+email=riadhelmokh09@gmail.com
+changelog=1.0.0 - First release.
+tags=contours,bathymetry,slope,aspect,dem,elevation,topography,terrain,hillshade,copernicus,srtm,spot elevation
+homepage=https://github.com/riadh-elmokh/AutoContour
+tracker=https://github.com/riadh-elmokh/AutoContour/issues
+repository=https://github.com/riadh-elmokh/AutoContour
+icon=icon.png
+category=Raster
+experimental=False
+deprecated=False
