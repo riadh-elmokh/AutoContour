@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="image.png"
+       alt="AeroTopo Banner"
+       width="100%">
+</p>
 # AutoContour
 Draw an area on the map, choose a DEM (or use your own), click **Create contours**.
 
